@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="estilo.xsl"?>
+<libreria xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://www.w3schools.com reglas.xsd">
+
+  <libro categoria="Misterio">
+  <!-- CODIGO: 3 letras mayuscula, 4 numeros, 2 caracteres especiales -->
+    <codigo>REC1234*!</codigo>
+    <titulo>The best book ever</titulo>
+    <autor>Diana Munteanu</autor>
+    <fecha>2022-01-01</fecha>
+    <precio>9.90</precio>
+  </libro>
+
+  <libro categoria="SelfHelp">
+    <codigo>REC1234*#</codigo>
+    <titulo>My story</titulo>
+    <autor>Diana Munteanu</autor>
+    <fecha>2022-01-01</fecha>
+    <precio>9.90</precio>
+  </libro>
+
+  <libro categoria="Paranormal">
+    <codigo>REC1234*#</codigo>
+    <titulo>True Blood</titulo>
+    <autor>Charlaine Harris</autor>
+    <fecha>2022-01-01</fecha>
+    <precio>9.90</precio>
+  </libro>
+
+  <libro categoria="Romantico">
+    <codigo>REC1234*#</codigo>
+    <titulo>Our love story</titulo>
+    <autor>Nora Roberts</autor>
+    <fecha>2022-01-01</fecha>
+    <precio>9.90</precio>
+  </libro>
+
+
+  <cliente nivel="VIP">
+  <!-- CODIGO: 3 letras mayuscula, 4 numeros, 1 caracter especial  -->
+    <codigoCliente>AAA1234$</codigoCliente>
+    <nombre>Diana</nombre>
+    <apellido>Munteanu</apellido>
+    <telefono>123456789</telefono>
+    <correo>dianamunteanu333@gmail.com</correo>
+    <fechaNacimiento>1994-11-04</fechaNacimiento>
+    <subscritoNewsletter>si</subscritoNewsletter>
+  </cliente>
+
+  <cliente nivel="Basic">
+    <codigoCliente>ABC1234$</codigoCliente>
+    <nombre>Estela</nombre>
+    <apellido>Gomez</apellido>
+    <apellido>Moreno</apellido>
+    <telefono>122345678</telefono>
+    <correo>estelag@gmail.com</correo>
+    <fechaNacimiento>1996-06-19</fechaNacimiento>
+    <subscritoNewsletter>no</subscritoNewsletter>
+  </cliente>
+
+</libreria>

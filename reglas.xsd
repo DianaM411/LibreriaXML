@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.w3schools.com"
+xmlns="https://www.w3schools.com"
+elementFormDefault="qualified">
+
+<xs:element name="libreria">
+  <xs:complexType>
+    <xs:sequence>
+     <!-- LIBRO: minimo 4 libros, maximo 100 -->
+          <xs:element name="libro" minOccurs="4" maxOccurs="100">
+            <xs:complexType>
+              <xs:sequence>
+            
+                <xs:element name="codigo">
+                  <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                  <xs:pattern value="[A-Z]{3}[0-9]{4}[(!*?=.@#$%^+)]{2}"/>
+                  </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="titulo" type="xs:string"/>
+                <xs:element name="autor" type="xs:string"/>
+                <!-- FECHA es opcional -->
+                <xs:element name="fecha" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                <!-- PRECIO por defecto es 9.99, pero se puede cambiar -->
+                <xs:element name="precio" type="xs:decimal" default="9.99"/>
+              </xs:sequence>
+              <xs:attribute name="categoria" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <!-- CATEGORIA: hay que elegir una de las 4  -->
+                <xs:pattern value="Misterio|Romantico|Paranormal|SelfHelp"/>
+                </xs:restriction>
+              </xs:simpleType>
+          </xs:attribute>
+            </xs:complexType>
+          </xs:element>
+
+    
+          <!-- CLIENTE: minimo 1 y maximo 2 -->
+          <xs:element name="cliente" minOccurs="1" maxOccurs="2">
+              <xs:complexType>
+              <xs:sequence>
+                
+                <xs:element name="codigoCliente">
+                  <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                  <xs:pattern value="[A-Z]{3}[0-9]{4}[(?=.@#$%^+)]"/>
+                  </xs:restriction>
+                  </xs:simpleType>
+                  </xs:element>
+
+                <xs:element name="nombre" type="xs:string"/>
+                <!-- APELLIDOS: maximo 4 -->
+                <xs:element name="apellido" type="xs:string" maxOccurs="4"/>
+                <!-- DIRECCION: es opcional -->
+                <xs:element name="direccion" type="xs:string" minOccurs="0"/>
+                <xs:element name="telefono" type="xs:string"/>
+                <xs:element name="correo" type="xs:string"/>
+                <xs:element name="fechaNacimiento" type="xs:date"/>
+                <xs:element name="subscritoNewsletter">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <!-- SUBSCRITO: puedes elegir si o no -->
+                      <xs:pattern value="si|no"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+
+              </xs:sequence>
+              <xs:attribute name="nivel">
+            <xs:simpleType>
+              <!-- NIVEL: puedes elegir entre 3 opciones -->
+            <xs:restriction base="xs:string">
+            <xs:enumeration value="Basic"/>
+            <xs:enumeration value="Medio"/>
+            <xs:enumeration value="VIP"/>
+            </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+              </xs:complexType>
+          </xs:element>
+
+</xs:sequence>   
+</xs:complexType>
+</xs:element>
+</xs:schema>
